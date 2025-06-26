@@ -17,6 +17,8 @@ int main() {
     bind(server_socket, (struct sockaddr*) &server_address, sizeof(server_address));
     listen(server_socket, 5);
     
+    printf("Server is listening on port 9002...\n",);
+    
     int client_socket = accept(server_socket, NULL, NULL);
     
     int number;

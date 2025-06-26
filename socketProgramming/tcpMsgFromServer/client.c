@@ -11,13 +11,10 @@ int main(int argc, char const* argv[])
 	struct sockaddr_in servAddr;
 
 	servAddr.sin_family = AF_INET;
-	servAddr.sin_port
-		= htons(9001); // use some unused port number
+	servAddr.sin_port = htons(9001); // use some unused port number
 	servAddr.sin_addr.s_addr = INADDR_ANY;
 
-	int connectStatus
-		= connect(sockD, (struct sockaddr*)&servAddr,
-				sizeof(servAddr));
+	int connectStatus = connect(sockD, (struct sockaddr*)&servAddr, sizeof(servAddr));
 
 	if (connectStatus == -1) {
 		printf("Error...\n");
